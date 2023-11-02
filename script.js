@@ -16,6 +16,10 @@ const cpuSelection = document.querySelector("#cpuSelection")
 
 const result = document.querySelector("#result")
 
+let toWin = document.querySelector("#toWin")
+toWin.textContent = `First to ${amountToWin}, wins.`
+
+
 
 
 
@@ -88,7 +92,7 @@ function assessRound(player, cpu) {
 
 function assignWin(winner) {
     if (winner != "tie") {
-        result.textContent = `${winner} wins`
+        result.textContent = `${winner} wins the round`
         if (winner == "PLAYER") {
             ++playerScore
             displayScore()
@@ -114,10 +118,14 @@ function displayScore () {
 
 function assessGame() {
     if (playerScore == amountToWin) {
-        alert("Player wins the game!");
+        alert("Player wins it all")
+        // toWin.textContent = "Player wins it all"
+        // toWin.style.color = "lightgreen"
         resetGame()
     } else if (cpuScore == amountToWin) {
-        alert("CPU wins the game!");
+        alert("CPU wins it all")
+        // toWin.textContent = "CPU wins it all"
+        // toWin.style.color = "red"
         resetGame()
     }
 
@@ -131,4 +139,11 @@ function resetGame() {
     playerSelection.textContent = ''
     cpuSelection.textContent = ''
     result.style.color = "white"
+
+
+    ///comeback to fix -- prompt is not allowing final score to display 
+    // amountToWin = parseInt(prompt("first to how many wins?", "3"))
+
+    toWin.textContent = `First to ${amountToWin}, wins.`
+    toWin.style.color = "white"
 }
