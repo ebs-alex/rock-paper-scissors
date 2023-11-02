@@ -3,3 +3,15 @@
     background-color: black;
     text-align: center;
 }
+
+#selections {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 7rem;
+}
+
+#selections button {
+    font-size: 35px;
+    /* color: lightgreen */
+}
